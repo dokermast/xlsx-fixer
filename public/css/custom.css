@@ -1,0 +1,14 @@
+
+.d-grey {
+    background-color: #b8b8b8;
+}
+
+.f-white {
+    color: white;
+}
+
+.card-header {
+    background-color: #969fa3 !important;
+    color: white!important;
+    font-weight: bold;
+}
