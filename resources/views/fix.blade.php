@@ -45,6 +45,11 @@
 
         @if(isset($title))
 
+            <div id="button" class="text-center">
+                <a href="{{ route('main') }}" class="btn btn-primary">Start Page</a>
+            </div>
+            <br>
+
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
@@ -104,21 +109,26 @@
 
         @if(isset($output_file))
 
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">RESULT</div>
+            <div id="button" class="text-center">
+                <a href="{{ route('main') }}" class="btn btn-primary">Start Page</a>
+            </div>
+            <br>
 
-                    <div class="card-body">
-                        <h4>Were fixed {{ $shift_count }} shifted rows</h4>
-                        <br>
-                        <h4>Were removed {{ $non_unique }} no unique rows</h4>
-                        <br>
-                        <a href="{{ $output_file }}" class="btn btn-outline-success">Download fixed File</a>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">RESULT</div>
+
+                        <div class="card-body">
+                            <h4>Were fixed {{ $shift_count }} shifted rows</h4>
+                            <br>
+                            <h4>Were removed {{ $non_unique }} no unique rows</h4>
+                            <br>
+                            <a href="{{ $output_file }}" class="btn btn-outline-success">Download fixed File</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
         @endif
     </div>
