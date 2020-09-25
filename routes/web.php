@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', 'FixController@index');
+Route::get('/', 'FixController@index')->name('main');
 
 Route::post('/check', 'FixController@check')->name('check');
 
