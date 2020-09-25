@@ -11,7 +11,7 @@
                         <div class="card-header">XLSX FIXER</div>
 
                         <div class="card-body">
-                            <form action="{{ route('check', [], false) }}"  method="post" enctype="multipart/form-data">
+                            <form action="{{ route('check', [], true) }}"  method="post" enctype="multipart/form-data">
                                 @csrf
                                 {{-- FILE--}}
                                 <div class="form-group">
@@ -59,7 +59,7 @@
                             <br>
                             <p>If you want to fix file "{{ $file_name }}" choose this file</p>
                             <p>If you want to remove equial rows too choose column with unique values</p>
-                            <form action="{{ route('execute', [], false) }}"  method="post" enctype="multipart/form-data">
+                            <form action="{{ route('execute', [], true) }}"  method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <div class="row">
