@@ -9,11 +9,13 @@ class FixController extends Controller
 {
     public function index()
     {
-        return view('fix', ['checked' => true]);
+//        dd($_SERVER);
+
+        return view('fix', ['checked' => false]);
     }
 
 
-    public function execute(Request $request)
+    public function execute(Request $request, $shifted)
     {
         $res = $this->getRows($request);
         $unique = $res['unique'];
@@ -36,7 +38,7 @@ class FixController extends Controller
         $xlsx->saveAs($output_file);
 
         return view('fix', [
-            'checked' => false,
+            'checked' => true,
             'fixed' => true,
             'output_file' => $output_file,
             'shift_count' => $shift_count ?? 0,
@@ -53,7 +55,7 @@ class FixController extends Controller
         $shifted_rows = $this->getShiftRows($res['rows'], $correct_count);
 
         return view('fix', [
-            'checked' => false,
+            'checked' => true,
             'title' => array_diff($res['rows'][0], array('')),
             'shift' => $shift,
             'shifted' => $shifted_rows,
