@@ -4,7 +4,7 @@
 
     <div class="container">
 
-        @if($checked)
+        @if(!$checked)
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
@@ -16,7 +16,7 @@
                                 {{-- FILE--}}
                                 <div class="form-group">
                                     <div class="row">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <label for="age">Choose XLSX File</label>
                                         </div>
                                         <div class="col-sm-8">
@@ -30,7 +30,7 @@
                                 {{-- BUTTON --}}
                                 <div class="form-group">
                                     <div class="row">
-                                        <div class="col-sm-3"></div>
+                                        <div class="col-sm-4"></div>
                                         <div class="col-sm-offset-0 col-sm-8">
                                             <input type="submit" class="btn btn-primary" value="CHECK FILE">
                                         </div>
@@ -55,15 +55,19 @@
                     <div class="card">
                         <div class="card-header">CHECKED RESULT</div>
                         <div class="card-body">
-                            <h5>The File  "{{ $file_name }}" has {{ $shifted }} shifted rows</h5>
-                            <br>
-                            <p>If you want to fix file "{{ $file_name }}" choose this file</p>
-                            <p>If you want to remove equial rows too choose column with unique values</p>
+                            @if($shifted)
+                                <p class="r-font">The File  "{{ $file_name }}" has {{ $shifted }} shifted rows</p>
+                                <p class="r-font">If you want to fix shifted rows of the "{{ $file_name }}" choose this file</p>
+                            @else
+                                <p class="g-font">This file doesn't have shifted rows</p>
+                            @endif
+                            <p class="b-font">If you want to check & remove equial rows choose column with unique values</p>
                             <form action="{{ route('execute', [], true) }}"  method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="shifted" value="{{ $shifted }}">
                                 @csrf
                                 <div class="form-group">
                                     <div class="row">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <label for="">Choose column</label>
                                         </div>
                                         <div class="col-sm-8">
@@ -81,8 +85,8 @@
                                 {{-- FILE--}}
                                 <div class="form-group">
                                     <div class="row">
-                                        <div class="col-sm-3">
-                                            <label>Choose XLSX File</label>
+                                        <div class="col-sm-4">
+                                            <label>Choose the same File</label>
                                         </div>
                                         <div class="col-sm-8">
                                             <input type="file" class="form-control-file" id="file" name="file"  value="" required>
