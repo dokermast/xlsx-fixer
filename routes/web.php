@@ -17,4 +17,4 @@ Route::get('/', 'FixController@index')->name('main');
 
 Route::post('/check', 'FixController@check')->name('check');
 
-Route::post('/execute/{shifted}', 'FixController@execute')->name('execute');
+Route::post('/execute', 'FixController@execute')->name('execute');

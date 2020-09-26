@@ -12,3 +12,21 @@
     color: white!important;
     font-weight: bold;
 }
+.b-font {
+    color: #53a0dd;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.g-font {
+    color: #45b2aa;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.r-font {
+    color: #b64646;
+    font-weight: bold;
+    font-size: 20px;
+
+}

@@ -55,13 +55,16 @@
                     <div class="card">
                         <div class="card-header">CHECKED RESULT</div>
                         <div class="card-body">
-                            <h5>The File  "{{ $file_name }}" has {{ $shifted }} shifted rows</h5>
-                            <br>
+
                             @if($shifted)
-                                <p>If you want to fix file "{{ $file_name }}" choose this file</p
+                                <p class="r-font">The File  "{{ $file_name }}" has {{ $shifted }} shifted rows</p>
+                                <p class="r-font">If you want to fix shifted rows of the "{{ $file_name }}" choose this file</p>
+                            @else
+                                <p class="g-font">This file doesn't have shifted rows</p>
                             @endif
-                            <p>If you want to remove equial rows too choose column with unique values</p>
-                            <form action="{{ route('execute', $shifted, true) }}"  method="post" enctype="multipart/form-data">
+                            <p class="b-font">If you want to check & remove equial rows choose column with unique values</p>
+                            <form action="{{ route('execute', [], true) }}"  method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="shifted" value="{{ $shifted }}">
                                 @csrf
                                 <div class="form-group">
                                     <div class="row">
