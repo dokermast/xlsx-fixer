@@ -73,6 +73,7 @@
                                         <div class="col-sm-8">
 
                                             <select name="unique" id="">
+                                                <option value="0">not chosen</option>
                                                 @php $i=0 @endphp
                                                 @foreach($title as $el)
                                                     <option value="{{$i++}}" >{{ $el }}</option>

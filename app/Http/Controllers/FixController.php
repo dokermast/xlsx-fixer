@@ -22,9 +22,8 @@ class FixController extends Controller
             return redirect(route('main'))->withErrors('Please, choose the '.$correct_name);
         }
 
-
         $res = $this->getRows($request);
-        $unique = $res['unique'];
+        $unique = $res['unique'] ?? 0;
         $shifted = (int)$request['shifted'];
         $correct_count = count(array_diff($res['rows'][0], array('')));
         $title = array_diff($res['rows'][0], array(''));
