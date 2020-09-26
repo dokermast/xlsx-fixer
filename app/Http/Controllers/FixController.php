@@ -89,7 +89,7 @@ class FixController extends Controller
     {
         if ($request->isMethod('post')) {
             $request->validate([
-                'file' => ['required', 'mimes:xlsx', new MaxFileSize()],
+                'file' => ['required', 'size: 2048', 'mimes: xlsx'],
             ]);
             $file = $request->file('file');
             $filename = $file->getPathname();

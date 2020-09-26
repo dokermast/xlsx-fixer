@@ -22,7 +22,7 @@
                                         <div class="col-sm-8">
                                             <input type="file" class="form-control-file" id="file" name="file"  value="" required>
                                             <br>
-                                            <p>Max file size shouldn't be more then 2000 kB</p>
+                                            <p>Max file size shouldn't be more then 2M</p>
                                             <p>File extension should be '.xlsx'</p>
                                         </div>
                                     </div>
