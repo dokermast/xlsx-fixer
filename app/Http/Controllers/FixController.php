@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class FixController extends Controller
 {
+    /* return start page */
     public function index()
     {
         return view('fix', ['checked' => false]);
@@ -64,7 +65,7 @@ class FixController extends Controller
         ]);
     }
 
-
+    /* checks downloaded xlsx file */
     public function check(Request $request)
     {
         $res = $this->getRows($request);
