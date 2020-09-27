@@ -110,7 +110,7 @@ class FixController extends Controller
         }
     }
 
-
+    /* return array with fixed rows */
     public function fixShiftedRows($rows, $correct_count)
     {
         $fixed_rows = [];
