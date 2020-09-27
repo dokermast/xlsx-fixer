@@ -65,7 +65,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p class="r-font">Attention!  my AWS server doesn't have great resources, so you shouldn't try upload files more than 2M because you can get a server error. Thanks.</p><br>
+                <p class="r-font">Attention!  my AWS server doesn't have great resources, so you shouldn't try upload files more than 5M because you can get a server error. Thanks.</p><br>
                 At-first you should to choose xlsx file and click to "check", then you will get info if the file has shifted rows.  If the file has shifted rows you can choose the same file again and click to "Get fixed file", also you can choose a column with unique values and remove rows that have non-unique values. If your file doesn't have shifted rows and you didn't choose a mode for removing non-unique rows you will be redirected to the start page.
 
             </div>
