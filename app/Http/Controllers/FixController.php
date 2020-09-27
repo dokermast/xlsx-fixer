@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class FixController extends Controller
 {
+    /* return start page */
     public function index()
     {
         return view('fix', ['checked' => false]);
