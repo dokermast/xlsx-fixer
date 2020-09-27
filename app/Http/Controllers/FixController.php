@@ -23,7 +23,7 @@ class FixController extends Controller
             return redirect(route('main'))->withErrors('Please, choose the '.$correct_name);
         }
 
-        $res = $this->getRows($request);
+        $res = $this->_getRows($request);
         $unique = $res['unique'] ?? 0;
         $shifted = (int)$request['shifted'];
         $correct_count = count(array_diff($res['rows'][0], array('')));
@@ -68,7 +68,7 @@ class FixController extends Controller
     /* checks downloaded xlsx file */
     public function check(Request $request)
     {
-        $res = $this->getRows($request);
+        $res = $this->_getRows($request);
         $correct_count = count(array_diff($res['rows'][0], array('')));
         $shift = count($res['rows'][0]) - $correct_count ?? 0;
         $shifted = $shift ? $this->getShiftedRows($res['rows'], $correct_count) : 0;
@@ -84,8 +84,8 @@ class FixController extends Controller
         ]);
     }
 
-
-    public function getRows(Request $request)
+    /* return array  */
+    public function _getRows(Request $request)
     {
         if ($request->isMethod('post')) {
             $request->validate([
